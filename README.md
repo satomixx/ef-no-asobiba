@@ -40,19 +40,6 @@ script/compress # Minify js and css before deploy
 
 See package.json to learn others.
 
-## Recommended tools
-
-- Atom: linter, linter-eslint, linter-flow
-
-## CircleCI and Deploy
-
-- Clone this repository and register it.
-- Run CI by `git push origin your-brach`
-- Add deploy key to github
-  - CircleCI -  Project Settings - PERMITTIONS -  Checkout SSH Key
-- Deploy by `git push origin release` to its github pages.
-- If you failed to delpoy by non-fast-forward, `git push origin :gh-pages` and retry it (work arround)
-
 ## License
 
 MIT
