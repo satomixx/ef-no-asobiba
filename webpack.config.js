@@ -2,21 +2,24 @@
 const AsyncAwaitPlugin = require("webpack-async-await") ;
 
 module.exports = {
-  entry: "./src/js/main.js",
-  output: {
-    path: "public",
-    filename: "bundle.js"
-  },
-  plugins: [
-    new AsyncAwaitPlugin({})
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: "babel-loader",
-        exclude: /node_modules/
-      }
-    ]
-  }
+    entry: {
+        "main": "./src/js/main.js",
+        "globe": "./src/js/globe.js"
+    },
+    output: {
+        path: "public/js",
+        filename: "[name].bundle.js"
+    },
+    plugins: [
+        new AsyncAwaitPlugin({})
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                use: "babel-loader",
+                exclude: /node_modules/
+            }
+        ]
+    }
 };

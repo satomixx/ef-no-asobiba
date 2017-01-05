@@ -30,7 +30,7 @@
     "block-spacing": 2,
     "comma-spacing": 2,
     "eol-last": 2,
-    "indent": [2, 2],
+    "indent": [2, 4],
     "linebreak-style": 2,
     "no-mixed-spaces-and-tabs": [2, "smart-tabs"],
     "no-spaced-func": 2,
