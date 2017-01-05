@@ -34,6 +34,25 @@ yarn run watch:html
 
 See package.json to learn others.
 
+# Forked By
+- Globe
+  - https://codepen.io/qkevinto/pen/EVGrGq
+- The Aviator
+  - https://tympanus.net/codrops/2016/04/26/the-aviator-animating-basic-3d-scene-threejs/
+- 3D Tetoris
+  - http://www.smashinglabs.pl/three-js-tetris-tutorial
+- Dungeon
+  - http://www.sugiyama-daigo.com/codecamp-teacher-blog/article7/index.html
+- Interactive 3D Mall Map
+  - https://tympanus.net/Development/Interactive3DMallMap/
+- Drums
+  - https://tympanus.net/Tutorials/SVGDrums/
+- Distortion
+  - https://tympanus.net/codrops/2016/05/03/animated-heat-distortion-effects-webgl/
+
+# References
+- https://books.google.co.jp/books?id=UvrYAgAAQBAJ&pg=PA76&lpg=PA76&dq=three.js+earth+mapping&source=bl&ots=21pxdvQtYS&sig=rJ8ki_shmNM3jtwMymdIGri6MmM&hl=ja&sa=X&ved=0ahUKEwjtuvSk15vRAhUFTrwKHYRiD884FBDoAQhEMAc#v=onepage&q&f=false
+
 # License
 
 MIT
