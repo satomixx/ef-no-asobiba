@@ -10,7 +10,12 @@
 - css: postcss
 - html: pug(jade)
 
-## Development
+# Setup
+## Download Three.js
+- https://github.com/mrdoob/three.js/
+You can use three.min.js. And you should download whole project to use much more various libraries.
+
+# Development
 
 ```sh
 # Run
@@ -29,6 +34,6 @@ yarn run watch:html
 
 See package.json to learn others.
 
-## License
+# License
 
 MIT
