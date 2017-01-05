@@ -1,0 +1,59 @@
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title The Aviator: The Game | Codrops
+    meta(name='description', content="Demo of the game: The Making of 'The Aviator': Animating a Basic 3D Scene with Three.js")
+    meta(name='keywords', content='three.js, webgl, tutorial, game, 3d, animation, airplane, web development, javascript')
+    meta(name='author', content='Karim Maaloul for Codrops')
+    link(rel='shortcut icon', href='/favicon.ico')
+    link(href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700italic', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', type='text/css', href='/css/aviator/demo.css')
+    link(rel='stylesheet', type='text/css', href='/css/aviator/game.css')
+    script(type='text/javascript', src='/vendor/js/TweenMax.min.js')
+    script(type='text/javascript', src='/vendor/js/three.min.js')
+    script(type='text/javascript', src='/js/aviator/game.js')
+    //if IE
+      script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+  body
+    #gameHolder.game-holder
+      .header
+        h1
+          span the
+          | Aviator
+        h2 fly it to the end
+        #score.score
+          #level.score__content
+            .score__label level
+            #levelValue.score__value.score__value--level 1
+            svg#levelCircle.level-circle(viewbox='0 0 200 200')
+              circle#levelCircleBgr(r='80', cx='100', cy='100', fill='none', stroke='#d1b790', stroke-width='24px')
+              circle#levelCircleStroke(r='80', cx='100', cy='100', fill='none', #f25346='', stroke='#68c3c0', stroke-width='14px', stroke-dasharray='502')
+          #dist.score__content
+            .score__label distance
+            #distValue.score__value.score__value--dist 000
+          #energy.score__content
+            .score__label energy
+            #energyValue.score__value.score__value--energy
+              #energyBar.energy-bar
+      #world.world
+      #replayMessage.message.message--replay Click to Replay
+      #instructions.message.message--instructions
+        | Grab the blue pills
+        span avoid the red ones
+    // Demo links
+    nav.meta
+      a.codrops-icon.codrops-icon--prev(href='http://tympanus.net/Development/Interactive3DMallMap/', title='Previous Demo')
+        span Previous Demo
+      a.codrops-icon.codrops-icon--drop(href='http://tympanus.net/codrops/?p=26501', title='Back to the article')
+        span Back to the Codrops article
+      a.demo-link(href='./part1.html') Part 1
+      a.demo-link(href='./part2.html') Part 2
+    .partisan
+      svg.partisan__bg(viewbox='0 0 500 188', preserveaspectratio='none', width='100%', height='100%', aria-hidden='true')
+        polygon(points='0 154 123.39 0 235.78 14.79 365.6 28.9 436.24 114.93 500 188 0 188 0 154', fill='#bed730')
+        polygon(points='0 188 108.84 18.17 347.91 26.79 500 188 365.6 28.9 123.39 0 0 154 0 188', fill='#dde465')
+      a.partisan__link(href='https://goo.gl/oECseP', rel='nofollow')
+        img.partisan__img(src='/images/Partisan_Bushel.png', alt='Bushel: Easily manage all your Apple devices at work')
+        h3.partisan__title Bushel: Easily manage all your Apple devices at work

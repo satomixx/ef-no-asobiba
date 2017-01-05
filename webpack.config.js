@@ -5,7 +5,7 @@ module.exports = {
     entry: {
         "main": "./src/js/main.js",
         "ground": "./src/js/ground.js",
-        "globe": "./src/js/globe.js"
+        "globe": "./src/js/globe.js",
     },
     output: {
         path: "public/js",

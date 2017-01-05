@@ -10,7 +10,7 @@
     "postcss-sorting"
   ],
   "input": "src/styles/main.css",
-  "output": "public/bundle.css",
+  "output": "public/css/bundle.css",
   "autoprefixer": {
     "browsers": [
       "ie >= 11",
