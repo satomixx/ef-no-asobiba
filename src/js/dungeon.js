@@ -198,7 +198,22 @@ function keyCtrl(e){
     else if(e.keyCode === 83 ){ stop(); }      //S     KEY
 }
 
+// part - map
+//MapData
+const map = new Array("47_12","42_12","37_12","32_12","27_12","22_12","17_12","12_12","47_17","37_17","22_17","47_22","27_22","12_22","47_27","42_27","37_27","22_27","12_27","47_32","27_32","12_32","47_37","37_37","17_37","12_37","47_42","27_42","12_42","47_47","42_47","37_47","32_47","27_47","22_47","17_47","12_47");
+const data = new Array(map);
 
+function getMapData(mapNum) {
+    return data[mapNum - 1];
+}
+
+//StartPosData
+const selfPos = "42_42";
+const startPosData = new Array(selfPos);
+
+function getStartPosData(startPosNum) {
+    return startPosData[startPosNum - 1];
+}
 
 
 // part - main
@@ -211,7 +226,7 @@ let scene = null;
 let camera = null;
 let viewPlane = null;
 let renderer = null;
-let wSizeWidth  = window.innerWidth;   //描画サイズ（横）
+let wSizeWidth = window.innerWidth;   //描画サイズ（横）
 let wSizeHeight = window.innerHeight;  //描画サイズ（縦）
 let startPos = getStartPosData(1);
 let sPos = startPos.split("_");
@@ -239,10 +254,11 @@ const thrBoxArray = new Array();
 const canBoxArray = new Array();
 let selfObj = null;
 //Texture
-const ground_texture = THREE.ImageUtils.loadTexture( "/images/dungeon/ground.jpg" );
+const textureLoader = new THREE.TextureLoader();
+const ground_texture = textureLoader.load( "/images/dungeon/ground.jpg" );
 ground_texture.wrapS = ground_texture.wrapT = THREE.RepeatWrapping;
 ground_texture.repeat.set( 64, 64 );
-const wall_texture = THREE.ImageUtils.loadTexture( "/images/dungeon/wall.jpg" );
+const wall_texture = textureLoader.load( "/images/dungeon/wall.jpg" );
 stats = new Stats();
 stats.domElement.style.position = "absolute";
 stats.domElement.style.top = "5px";
@@ -307,15 +323,14 @@ function setView() {
     const light = new THREE.DirectionalLight(0xffffff, 0.5);  //照らす方向を指定する光源
     light.position.set(10, 10, -10);   //光源の位置を指定
     light.castShadow = true;  //影を作る物体かどうかを設定
-    light.shadowMapWidth = 2024;  //影の精細さ（解像度）を設定
-    light.shadowMapHeight = 2024;  //影の精細さ（解像度）を設定
-    light.shadowCameraLeft = -50;  //ライトの視点方向の影の表示度合い
-    light.shadowCameraRight = 50;  //ライトの視点方向の影の表示度合い
-    light.shadowCameraTop = 50;  //ライトの視点方向の影の表示度合い
-    light.shadowCameraBottom = -50;  //ライトの視点方向の影の表示度合い
-    light.shadowCameraFar = 500;  //影を表示する範囲の設定
-    light.shadowCameraNear = 0;  //影を表示する範囲の設定
-    light.shadowDarkness = 0.5;  //影の透明度
+    light.shadow.mapSize.width = 2024;  //影の精細さ（解像度）を設定
+    light.shadow.mapSize.height = 2024;  //影の精細さ（解像度）を設定
+    light.shadow.camera.left = -50;  //ライトの視点方向の影の表示度合い
+    light.shadow.camera.right = 50;  //ライトの視点方向の影の表示度合い
+    light.shadow.camera.top = 50;  //ライトの視点方向の影の表示度合い
+    light.shadow.camera.bottom = -50;  //ライトの視点方向の影の表示度合い
+    light.shadow.camera.far = 500;  //影を表示する範囲の設定
+    light.shadow.camera.near = 0;  //影を表示する範囲の設定
     scene.add(light);
     const amb = new THREE.AmbientLight(0xffffff);  //全体に光を当てる光源
     scene.add(amb);
@@ -339,7 +354,7 @@ function setView() {
     renderer = new THREE.WebGLRenderer({antialias: true});  //レンダラーを作成
     renderer.setSize(wSizeWidth, wSizeHeight);              //レンダラーのサイズを設定
     renderer.setClearColor(0xffffff, 1);                    //レンダラーの描画内容をクリア
-    renderer.shadowMapEnabled = true;                       //レンダラーの影の描画を有効化
+    renderer.shadowMap.enabled = true;                       //レンダラーの影の描画を有効化
     document.body.appendChild(renderer.domElement);         //DOM要素をBodyに追加
     //Start Rendering
     renderer.render(scene, camera);  //レンダラーで3D空間を描画
