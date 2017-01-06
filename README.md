@@ -52,6 +52,7 @@ See package.json to learn others.
 
 # References
 - https://books.google.co.jp/books?id=UvrYAgAAQBAJ&pg=PA76&lpg=PA76&dq=three.js+earth+mapping&source=bl&ots=21pxdvQtYS&sig=rJ8ki_shmNM3jtwMymdIGri6MmM&hl=ja&sa=X&ved=0ahUKEwjtuvSk15vRAhUFTrwKHYRiD884FBDoAQhEMAc#v=onepage&q&f=false
+- http://www.natural-science.or.jp/article/20120220155529.php
 
 # License
 
