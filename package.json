@@ -9,12 +9,13 @@
     "build:css": "postcss -c .postcssrc.json",
     "build:html": "pug --hierarchy -o public/ src/html/",
 
-    "build:copy-resources": "yarn run build:copy-vendor & yarn run build:copy-image & yarn run build:copy-font",
+    "build:copy-resources": "yarn run build:copy-vendor & yarn run build:copy-image & yarn run build:copy-font & yarn run build:copy-mp3",
     "build:copy-vendor": "cpx \"./src/vendor/**/{*.js,*.eot,*.svg,*.ttf,*.woff,package.json}\" ./public/vendor/",
-    "build:copy-image": "cpx \"./src/assets/images/{*.jpg,*.png}\" ./public/images/",
-    "build:copy-font": "cpx \"./src/assets/fonts/**/{*.eot,*.svg,*.ttf,*.woff}\" ./public/fonts/",
+    "build:copy-image": "cpx \"./src/assets/images/**/{*.jpg,*.png}\" ./public/images/",
+    "build:copy-font": "cpx \"./src/assets/fonts/**/{*.eot,*.svg,*.ttf,*.woff,*.woff2,*.otf,*.css}\" ./public/fonts/",
+    "build:copy-mp3": "cpx \"./src/assets/mp3/**/*.mp3\" ./public/mp3/",
 
-    "build:copy-samples": "yarn run build:copy-aviator & yarn run build:copy-floormap",
+    "build:copy-samples": "yarn run build:copy-aviator & yarn run build:copy-floormap & yarn run build:copy-drums",
     "build:copy-aviator": "yarn run build:copy-aviator-js & yarn run build:copy-aviator-css",
     "build:copy-aviator-js": "cpx \"./src/js/aviator/*.js\" ./public/js/aviator/",
     "build:copy-aviator-css": "cpx \"./src/styles/aviator/*.css\" ./public/css/aviator/",
@@ -22,6 +23,10 @@
     "build:copy-floormap-html": "cpx \"./src/html/floormap/*.html\" ./public/floormap/",
     "build:copy-floormap-js": "cpx \"./src/js/floormap/*.js\" ./public/js/floormap/",
     "build:copy-floormap-css": "cpx \"./src/styles/floormap/*.css\" ./public/css/floormap/",
+    "build:copy-drums": "yarn run build:copy-drums-html & yarn run build:copy-drums-js & yarn run build:copy-drums-css",
+    "build:copy-drums-html": "cpx \"./src/html/drums/*.html\" ./public/drums/",
+    "build:copy-drums-js": "cpx \"./src/js/drums/*.js\" ./public/js/drums/",
+    "build:copy-drums-css": "cpx \"./src/styles/drums/*.css\" ./public/css/drums/",
 
     "watch:all": "yarn run watch:js & yarn run watch:css & yarn run watch:html",
     "watch:js": "webpack -w",
