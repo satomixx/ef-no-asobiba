@@ -15,7 +15,10 @@
     "build:copy-font": "cpx \"./src/assets/fonts/**/{*.eot,*.svg,*.ttf,*.woff,*.woff2,*.otf,*.css}\" ./public/fonts/",
     "build:copy-mp3": "cpx \"./src/assets/mp3/**/*.mp3\" ./public/mp3/",
 
-    "build:copy-samples": "yarn run build:copy-aviator & yarn run build:copy-floormap & yarn run build:copy-drums & yarn run build:copy-heat",
+    "build:copy-samples": "yarn run build:copy-dungeon & yarn run build:copy-aviator & yarn run build:copy-floormap & yarn run build:copy-drums & yarn run build:copy-heat",
+    "build:copy-dungeon": "yarn run build:copy-dungeon-js & yarn run build:copy-dungeon-css",
+    "build:copy-dungeon-js": "cpx \"./src/js/dungeon/*.js\" ./public/js/dungeon/",
+    "build:copy-dungeon-css": "cpx \"./src/styles/dungeon/*.css\" ./public/css/dungeon/",
     "build:copy-aviator": "yarn run build:copy-aviator-js & yarn run build:copy-aviator-css",
     "build:copy-aviator-js": "cpx \"./src/js/aviator/*.js\" ./public/js/aviator/",
     "build:copy-aviator-css": "cpx \"./src/styles/aviator/*.css\" ./public/css/aviator/",
